@@ -5,7 +5,7 @@ ENV GITASOF 21.06.27.1
 ENV WORKDIR /kiwiirc
 WORKDIR ${WORKDIR}
 
-RUN apk add --update git yarn nodejs-npm g++ make go pkgconfig bash curl
+RUN apk add --update git yarn npm g++ make go pkgconfig bash curl python3
 RUN git clone --depth=1 --single-branch https://github.com/kiwiirc/kiwiirc
 RUN cd /kiwiirc/kiwiirc && yarn install
 RUN cd /kiwiirc/kiwiirc && npm run build
